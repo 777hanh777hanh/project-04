@@ -11,3 +11,51 @@ body {
     font-size: 1.6rem;
     font-family: 'Poppins', sans-serif;
 }
+
+@import './variable';
+
+.container {
+    max-width: 1170px;
+    width: calc(100% - 24px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    --height: 56px;
+
+    display: inline-block;
+    min-width: 130px;
+    height: var(--height);
+    line-height: var(--height);
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: $primaryColor;
+    text-align: center;
+    position: relative;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        inset: 0;
+        border: 1px solid currentColor;
+        position: absolute;
+        border-radius: 999px;
+        opacity: 0.6;
+        transition: all 0.2s linear;
+    }
+
+    &:hover {
+        color: #fff;
+        position: relative;
+        &::before {
+            color: $primaryColor;
+            background: currentColor;
+            opacity: 1;
+            z-index: -1;
+        }
+    }
+}
+
+// Header
+@import './header';

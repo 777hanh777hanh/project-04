@@ -12,4 +12,102 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.container {
+  max-width: 1170px;
+  width: calc(100% - 24px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  --height: 56px;
+  display: inline-block;
+  min-width: 130px;
+  height: var(--height);
+  line-height: var(--height);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #ff5d31;
+  text-align: center;
+  position: relative;
+}
+.btn::before {
+  content: "";
+  display: inline-block;
+  inset: 0;
+  border: 1px solid currentColor;
+  position: absolute;
+  border-radius: 999px;
+  opacity: 0.6;
+  transition: all 0.2s linear;
+}
+.btn:hover {
+  color: #fff;
+  position: relative;
+}
+.btn:hover::before {
+  color: #ff5d31;
+  background: currentColor;
+  opacity: 1;
+  z-index: -1;
+}
+
+.header {
+  padding: 26px 0;
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-action {
+  display: flex;
+  align-items: center;
+}
+.header-action__btn {
+  --height: 50px;
+  min-width: 117px;
+  color: #000958;
+}
+.header-action__btn:hover {
+  color: #fff;
+}
+.header-action__btn:hover::before {
+  color: #000958;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo__img {
+  display: block;
+  margin-right: 10px;
+}
+.logo__brand {
+  font-family: "Sora", sans-serif;
+  font-weight: 900;
+  color: #000958;
+  font-size: 2.3rem;
+  line-height: 1;
+}
+
+.navbar__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar__link {
+  display: inline-block;
+  padding: 18px;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #5e6085;
+}
+.navbar__link:hover {
+  text-shadow: 0.5px 0px 0px currentColor, -0.5px 0 0 currentColor;
+  color: #000958;
+}
+
 /*# sourceMappingURL=style.css.map */
