@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -10,6 +11,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
+  background: #fffaf5;
 }
 
 .container {
@@ -21,7 +23,9 @@ body {
 
 .btn {
   --height: 56px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 130px;
   height: var(--height);
   line-height: var(--height);
@@ -50,6 +54,50 @@ body {
   background: currentColor;
   opacity: 1;
   z-index: -1;
+}
+.btn:hover .btn__icon {
+  background: #ff5d31;
+  color: #fff;
+}
+.btn__icon {
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #ff5d31;
+  transition: all 0.2s linear;
+}
+
+.section__heading {
+  font-family: "Sora", sans-serif;
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1.19;
+  color: #000958;
+}
+.section__title {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  line-height: 1;
+}
+.section__desc {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.88;
+  color: #656689;
+}
+.section__desc--small {
+  font-size: 1.4rem;
+  line-height: 1.71;
+}
+.section__desc--large {
+  font-size: 1.8rem;
+  line-height: 1.56;
 }
 
 .header {
@@ -108,6 +156,161 @@ body {
 .navbar__link:hover {
   text-shadow: 0.5px 0px 0px currentColor, -0.5px 0 0 currentColor;
   color: #000958;
+}
+
+.hero {
+  padding: 77px 0;
+}
+.hero__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 120px;
+}
+.hero__media {
+  display: flex;
+  position: relative;
+  padding-bottom: 94px;
+}
+.hero__img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  width: 388px;
+  height: 488px;
+  background: #fe997b;
+  border: 3px solid #fff;
+  border-radius: 16px;
+}
+.hero__img-wrap--small {
+  width: 186px;
+  height: 244px;
+  background: #faa7ad;
+  align-self: flex-end;
+  margin-bottom: -58px;
+  margin-left: -23px;
+  border: 2px solid #f7dddf;
+}
+.hero__img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.hero__decor {
+  position: absolute;
+  z-index: -1;
+}
+.hero__decor--left {
+  bottom: 10px;
+  left: -58px;
+}
+.hero__decor--right {
+  top: 17px;
+  right: -41px;
+}
+.hero__list {
+  position: absolute;
+  bottom: 0;
+  left: 129px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 250px;
+  height: 156px;
+  background: #ffffff;
+  box-shadow: -17px 14px 68px -4px rgba(207, 174, 132, 0.25);
+  border-radius: 10px;
+  padding: 18px 14px;
+}
+.hero-list-item {
+  display: flex;
+  align-items: center;
+}
+.hero-list-item__thumb {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #fec23f;
+}
+.hero-list-item:nth-of-type(even) .hero-list-item__thumb {
+  background: #c6e2fa;
+}
+.hero-list-item__info {
+  margin-left: 10px;
+}
+.hero-list-item__title {
+  font-size: 1.4rem;
+  color: #181e52;
+}
+.hero-list-item__skeleton {
+  margin-top: 6px;
+  width: var(--width, 118px);
+  height: 4px;
+  background: #000958;
+  opacity: 0.08;
+  border-radius: 10px;
+}
+.hero-list-item__separate {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #f2f2f2;
+  border-radius: 999px;
+}
+.hero__heading {
+  font-weight: 800;
+  font-size: 6.6rem;
+  line-height: 1.15;
+}
+.hero__desc {
+  margin-top: 24px;
+  max-width: 391px;
+}
+.hero__row {
+  display: flex;
+  margin-top: 38px;
+  align-items: center;
+}
+.hero__cta-btn {
+  --height: 60px;
+  min-width: 190px;
+  font-size: 1.6rem;
+  color: #fff;
+  box-shadow: 0px 13px 26px -8px rgba(255, 91, 46, 0.42);
+  border-radius: 999px;
+}
+.hero__cta-btn::before {
+  color: #ff5d31;
+  background-color: currentColor;
+  opacity: 1;
+  z-index: -1;
+}
+.hero__cta-btn:hover {
+  color: #ff5d31;
+}
+.hero__cta-btn:hover::before {
+  border-color: #ff5d31;
+  background-color: #fff;
+}
+.hero__cta-link {
+  margin-left: 12px;
+  padding: 12px 12px;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1;
+  text-decoration-line: underline;
+  text-underline-offset: 2px;
+  color: #000958;
+  transition: color 0.23s ease;
+}
+.hero__cta-link:hover {
+  color: #ff5d31;
 }
 
 /*# sourceMappingURL=style.css.map */
