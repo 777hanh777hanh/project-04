@@ -38,9 +38,9 @@ body {
 .btn::before {
   content: "";
   display: inline-block;
+  position: absolute;
   inset: 0;
   border: 1px solid currentColor;
-  position: absolute;
   border-radius: 999px;
   opacity: 0.6;
   transition: all 0.2s linear;
@@ -50,14 +50,9 @@ body {
   position: relative;
 }
 .btn:hover::before {
-  color: #ff5d31;
   background: currentColor;
   opacity: 1;
   z-index: -1;
-}
-.btn:hover .btn__icon {
-  background: #ff5d31;
-  color: #fff;
 }
 .btn__icon {
   margin-left: 10px;
@@ -84,6 +79,7 @@ body {
   font-family: "Sora", sans-serif;
   font-weight: 600;
   line-height: 1;
+  color: #5e6085;
 }
 .section__desc {
   font-family: "Poppins", sans-serif;
@@ -299,6 +295,10 @@ body {
   border-color: #ff5d31;
   background-color: #fff;
 }
+.hero__cta-btn:hover .btn__icon {
+  background: #ff5d31;
+  color: #fff;
+}
 .hero__cta-link {
   margin-left: 12px;
   padding: 12px 12px;
@@ -315,7 +315,7 @@ body {
 }
 
 .about {
-  padding: 61px 130px;
+  padding: 60px 0;
 }
 .about__inner {
   display: grid;
@@ -569,6 +569,113 @@ body {
   background-color: #ff5b2e;
   opacity: 1;
   height: 1.5px;
+}
+
+.service {
+  margin-top: 130px;
+  padding: 68px 0 100px;
+  background: #fff6ed;
+}
+.service__top {
+  text-align: center;
+}
+.service__desc {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+.service__body {
+  margin-top: 71px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 71px;
+}
+.service .service-item {
+  padding: 30px 22px 30px 28px;
+  width: 294px;
+  background: #fff;
+  border: 2px solid rgba(255, 188, 122, 0.26);
+  border-radius: 10px;
+}
+.service .service-item__heading {
+  font-size: 2.2rem;
+  color: #000958;
+  display: flex;
+  align-items: center;
+}
+.service .service-item__heading::before {
+  content: "";
+  display: block;
+  margin-right: 10px;
+  width: 2px;
+  height: 22px;
+  background: linear-gradient(#ff5b2e, #ffa187);
+  border-radius: 99px;
+}
+.service .service-item__desc {
+  margin-top: 18px;
+  max-width: 391px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden !important;
+}
+.service .service-item__more {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Sora", sans-serif;
+  margin-top: 24px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #34396a;
+}
+.service .service-item__more::after {
+  content: url(../images/icon/arrow-up-right.svg);
+  margin-left: 6px;
+  margin-top: 1px;
+}
+.service .service-item__more:hover {
+  color: #ff5d31;
+}
+.service .service-item + .service-item {
+  margin-top: 24px;
+}
+.service__media {
+  position: relative;
+  margin-top: 18px;
+}
+.service__media::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 350px;
+  left: 15px;
+  right: 15px;
+  bottom: 0;
+  background: linear-gradient(180deg, #9df1fb 0%, #73d0db 108.14%);
+  border-radius: 10px;
+}
+.service__img {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.service__cta-wrap {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+}
+.service__cta-btn {
+  min-width: 214px;
+  color: #ff5d31;
+  z-index: 1;
+}
+.service__cta-btn:hover {
+  color: #fff;
+}
+.service__cta-btn:hover::before {
+  color: #ff5d31;
 }
 
 /*# sourceMappingURL=style.css.map */

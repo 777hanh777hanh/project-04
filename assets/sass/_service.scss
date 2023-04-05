@@ -1,0 +1,119 @@
+.service {
+    margin-top: 130px;
+    padding: 68px 0 100px;
+    background: #fff6ed;
+
+    &__top {
+        text-align: center;
+    }
+
+    &__desc {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    &__body {
+        margin-top: 71px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        column-gap: 71px;
+    }
+
+    .service-item {
+        padding: 30px 22px 30px 28px;
+        width: 294px;
+        background: #fff;
+        border: 2px solid rgba(255, 188, 122, 0.26);
+        border-radius: 10px;
+
+        &__heading {
+            font-size: 2.2rem;
+            color: $headingColor;
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: '';
+                display: block;
+                margin-right: 10px;
+                width: 2px;
+                height: 22px;
+                background: linear-gradient(#ff5b2e, #ffa187);
+                border-radius: 99px;
+            }
+        }
+
+        &__desc {
+            margin-top: 18px;
+            @include line-clamp(3);
+        }
+
+        &__more {
+            display: inline-flex;
+            align-items: center;
+            font-family: 'Sora', sans-serif;
+            margin-top: 24px;
+            font-weight: 400;
+            font-size: 1.2rem;
+            line-height: 1;
+            color: #34396a;
+
+            &::after {
+                content: url(../images/icon/arrow-up-right.svg);
+                margin-left: 6px;
+                margin-top: 1px;
+            }
+
+            &:hover {
+                color: $primaryColor;
+            }
+        }
+    }
+
+    .service-item + .service-item {
+        margin-top: 24px;
+    }
+
+    &__media {
+        position: relative;
+        margin-top: 18px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            height: 350px;
+            left: 15px;
+            right: 15px;
+            bottom: 0;
+            background: linear-gradient(180deg, #9df1fb 0%, #73d0db 108.14%);
+            border-radius: 10px;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__cta-wrap {
+        margin-top: 45px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__cta-btn {
+        min-width: 214px;
+        color: $primaryColor;
+        z-index: 1;
+
+        &:hover {
+            color: #fff;
+            &::before {
+                color: $primaryColor;
+            }
+        }
+    }
+}
