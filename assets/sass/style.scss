@@ -75,6 +75,7 @@ body {
         border-radius: 50%;
         background-color: #fff;
         color: $primaryColor;
+        box-shadow: 4px 3px 10px -1px rgba(191, 41, 0, 0.4);
         transition: all 0.2s linear;
     }
 }
@@ -112,8 +113,19 @@ body {
     }
 }
 
+@mixin line-clamp($lineClamp: 1) {
+    max-width: 391px;
+    display: -webkit-box;
+    -webkit-line-clamp: $lineClamp;
+    -webkit-box-orient: vertical;
+    overflow: hidden !important;
+}
+
 // Header
 @import './header';
 
 // Hero
 @import './hero';
+
+// About
+@import './about';
