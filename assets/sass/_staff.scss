@@ -1,0 +1,114 @@
+.staff {
+    padding: 130px 0;
+
+    &__desc,
+    &__heading {
+        text-align: center;
+    }
+
+    &__desc {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    &__list {
+        margin-top: 45px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 35px;
+    }
+
+    .staff-item {
+        text-align: center;
+
+        &__img-wrap {
+            position: relative;
+            margin: 0 16px;
+            border-radius: 130px;
+            // overflow: hidden;
+
+            &::before {
+                position: absolute;
+                content: '';
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 94%;
+                border-radius: inherit;
+                background-color: var(--bg, #90ccff);
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                z-index: 1;
+                width: calc(100% + 36px);
+                height: 100%;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                background-repeat: no-repeat;
+                background-position: bottom;
+                background-size: 100%;
+            }
+        }
+
+        &:nth-child(1) .staff-item__img-wrap::after {
+            background-image: url(../images/staff/staff_decor_01.svg);
+        }
+        &:nth-child(2) .staff-item__img-wrap::after {
+            background-image: url(../images/staff/staff_decor_02.svg);
+        }
+        &:nth-child(3) .staff-item__img-wrap::after {
+            background-image: url(../images/staff/staff_decor_03.svg);
+        }
+        &:nth-child(4) .staff-item__img-wrap::after {
+            background-image: url(../images/staff/staff_decor_04.svg);
+        }
+
+        &:nth-child(even) .staff-item__img-wrap::after {
+            background-position: 0 19px;
+        }
+
+        &__img {
+            position: relative;
+            display: block;
+            width: 100%;
+            z-index: 1;
+            border-radius: inherit;
+        }
+
+        &__title {
+            margin-top: 34px;
+            font-weight: 400;
+            font-size: 1.4rem;
+            line-height: 1;
+            color: $textColor;
+        }
+
+        &__name {
+            margin-top: 14px;
+            font-size: 2.2rem;
+            color: $headingColor;
+        }
+    }
+
+    &__cta-wrap {
+        margin-top: 48px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__cta-btn {
+        min-width: 193px;
+        z-index: 1;
+
+        &:hover {
+            color: #fff;
+            &::before {
+                color: $primaryColor;
+            }
+        }
+    }
+}
