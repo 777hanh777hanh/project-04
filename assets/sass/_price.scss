@@ -1,0 +1,191 @@
+.pricing {
+    padding: 86px 0;
+    background: #fff6ed;
+
+    &__container {
+        max-width: 994px;
+    }
+
+    &__top {
+        max-width: 710px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__desc {
+        margin-top: 24px;
+    }
+
+    &__switch-wrap {
+        position: relative;
+        margin-top: 38px;
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+    }
+
+    &__switch {
+        position: relative;
+    }
+
+    &__switch-input {
+        display: none;
+
+        &:checked {
+            + .pricing__switch-label::before {
+                left: calc(100% - 131px);
+                width: 131px;
+            }
+
+            + .pricing__switch-label .pricing__switch-value:nth-child(2) {
+                color: #fff;
+            }
+
+            ~ .pricing__save {
+                display: block;
+                opacity: 1;
+            }
+        }
+
+        &:not(:checked) + .pricing__switch-label .pricing__switch-value:nth-child(1) {
+            color: #fff;
+        }
+    }
+
+    &__switch-label {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 276px;
+        border: 1px solid rgba($color: $pricingColor, $alpha: 0.6);
+        border-radius: 999px;
+        color: $primaryColor;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 1;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 144px;
+            height: 56px;
+            background: $pricingColor;
+            border-radius: inherit;
+            z-index: -1;
+            transition: 0.24s linear;
+        }
+    }
+
+    &__switch-value {
+        height: 56px;
+        padding: 20px 40px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    &__save {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(calc(100% + 24px), -10px);
+        opacity: 1;
+        transition: opacity 0.4s ease;
+    }
+
+    &__list {
+        margin-top: 56px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 44px;
+    }
+
+    &-item {
+        padding: 30px 28px;
+        background: #fff;
+        border-radius: 20px;
+
+        &:hover {
+            box-shadow: 0px 20px 44px rgba(195, 108, 22, 0.06);
+        }
+
+        &__type {
+            font-weight: 400;
+            font-size: 1.2rem;
+            line-height: 1;
+            color: $pricingColor;
+        }
+
+        &__heading {
+            margin-top: 8px;
+            font-size: 1.8rem;
+            color: #3f4065;
+        }
+
+        &__price {
+            margin-top: 24px;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 3.3rem;
+            line-height: 1.03;
+            color: $headingColor;
+        }
+
+        &__btn {
+            --height: 44px;
+
+            margin-top: 36px;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-radius: 999px;
+            background-color: #fff;
+            color: $pricingColor;
+            font-weight: 500;
+            font-size: 1.6rem;
+            z-index: 1;
+            cursor: pointer;
+
+            &::before {
+                color: currentColor;
+            }
+
+            &:hover::before {
+                background: $pricingColor;
+            }
+        }
+
+        &__list {
+            margin-top: 24px;
+        }
+
+        &__item {
+            font-weight: 400;
+            font-size: 1.4rem;
+            line-height: 1;
+            color: $textColor;
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: url(../images/icon/price-check.svg);
+                display: inline-block;
+                margin-right: 14px;
+            }
+
+            &--inactive {
+                &::before {
+                    opacity: 0.4;
+                }
+            }
+        }
+
+        &__item + &__item {
+            margin-top: 18px;
+        }
+    }
+}
