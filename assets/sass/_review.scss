@@ -1,0 +1,124 @@
+.review {
+    padding: 52px 0 0;
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__btn {
+        border: none;
+        outline: none;
+        background: #fff;
+        margin-top: 0px;
+        color: $pricingColor;
+        z-index: 1;
+
+        &:hover {
+            cursor: pointer;
+            color: #fff;
+
+            &::before {
+                color: $pricingColor;
+            }
+        }
+
+        &--right {
+            transform: rotateY(180deg);
+        }
+    }
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 44px;
+        gap: 115px;
+    }
+
+    &__media {
+        height: 507px;
+    }
+
+    &__img-wrap {
+        width: 274px;
+        height: 427px;
+        flex-shrink: 0;
+        border-radius: 137px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            height: 350px;
+            border-radius: inherit;
+            background-color: #ffda54;
+            z-index: -1;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__content {
+        max-width: 553px;
+    }
+
+    &__desc {
+        margin-top: 24px;
+        color: #000;
+    }
+
+    &__name {
+        margin-top: 34px;
+        display: flex;
+        align-items: center;
+        font-family: 'Sora', sans-serif;
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 1;
+        color: #282828;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 2px;
+            margin-right: 8px;
+            background: #000;
+            border-radius: 99px;
+        }
+    }
+
+    &__slider-handle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 56px;
+        gap: 8px;
+    }
+
+    &__tick {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 1px solid $pricingColor;
+        cursor: pointer;
+        transition: 0.5s linear;
+
+        &--active {
+            cursor: default;
+            width: 24px;
+            border-radius: 999px;
+            background: $pricingColor;
+        }
+    }
+}

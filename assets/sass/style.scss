@@ -72,6 +72,15 @@ body {
         box-shadow: 4px 3px 10px -1px rgba(191, 41, 0, 0.4);
         transition: all 0.2s linear;
     }
+
+    &--circle {
+        min-width: var(--height);
+        &::before {
+            position: absolute;
+            width: var(--height);
+            height: var(--height);
+        }
+    }
 }
 .section {
     &__heading {
@@ -133,3 +142,6 @@ body {
 
 // Price
 @import './price';
+
+// Review
+@import './review';

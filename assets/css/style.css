@@ -67,6 +67,14 @@ body {
   box-shadow: 4px 3px 10px -1px rgba(191, 41, 0, 0.4);
   transition: all 0.2s linear;
 }
+.btn--circle {
+  min-width: var(--height);
+}
+.btn--circle::before {
+  position: absolute;
+  width: var(--height);
+  height: var(--height);
+}
 
 .section__heading {
   font-family: "Sora", sans-serif;
@@ -933,6 +941,114 @@ body {
 }
 .pricing-item__item + .pricing-item__item {
   margin-top: 18px;
+}
+
+.review {
+  padding: 52px 0 0;
+}
+.review__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.review__btn {
+  border: none;
+  outline: none;
+  background: #fff;
+  margin-top: 0px;
+  color: #ff5b2e;
+  z-index: 1;
+}
+.review__btn:hover {
+  cursor: pointer;
+  color: #fff;
+}
+.review__btn:hover::before {
+  color: #ff5b2e;
+}
+.review__btn--right {
+  transform: rotateY(180deg);
+}
+.review__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 44px;
+  gap: 115px;
+}
+.review__media {
+  height: 507px;
+}
+.review__img-wrap {
+  width: 274px;
+  height: 427px;
+  flex-shrink: 0;
+  border-radius: 137px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.review__img-wrap::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 350px;
+  border-radius: inherit;
+  background-color: #ffda54;
+  z-index: -1;
+}
+.review__img {
+  width: 100%;
+  object-fit: cover;
+}
+.review__content {
+  max-width: 553px;
+}
+.review__desc {
+  margin-top: 24px;
+  color: #000;
+}
+.review__name {
+  margin-top: 34px;
+  display: flex;
+  align-items: center;
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #282828;
+}
+.review__name::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  margin-right: 8px;
+  background: #000;
+  border-radius: 99px;
+}
+.review__slider-handle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 56px;
+  gap: 8px;
+}
+.review__tick {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #ff5b2e;
+  cursor: pointer;
+  transition: 0.5s linear;
+}
+.review__tick--active {
+  cursor: default;
+  width: 24px;
+  border-radius: 999px;
+  background: #ff5b2e;
 }
 
 /*# sourceMappingURL=style.css.map */
