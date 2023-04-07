@@ -969,12 +969,20 @@ body {
 .review__btn--right {
   transform: rotateY(180deg);
 }
-.review__body {
+.review__list {
+  display: flex;
+  margin: 0 44px;
+  width: 100%;
+  overflow: hidden;
+}
+.review__item {
+  --bgImg: #ffda54;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 44px;
   gap: 115px;
+  min-width: 100%;
+  position: relative;
 }
 .review__media {
   height: 507px;
@@ -996,12 +1004,14 @@ body {
   bottom: 0;
   height: 350px;
   border-radius: inherit;
-  background-color: #ffda54;
+  background: var(--bgImg);
   z-index: -1;
 }
 .review__img {
   width: 100%;
   object-fit: cover;
+  position: absolute;
+  bottom: 0;
 }
 .review__content {
   max-width: 553px;
