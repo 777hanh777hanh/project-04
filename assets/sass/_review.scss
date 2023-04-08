@@ -1,5 +1,5 @@
 .review {
-    padding: 52px 0 0;
+    padding: 52px 0 65px;
 
     &__row {
         display: flex;
@@ -46,9 +46,11 @@
         min-width: 100%;
         position: relative;
 
-        // &:nth-child(2) {
-        //     left: -100%;
-        // }
+        visibility: hidden;
+        &:nth-child(2) {
+            visibility: visible;
+            left: -100%;
+        }
         // &:nth-child(3) {
         //     left: -200%;
         // }
