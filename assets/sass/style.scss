@@ -89,6 +89,12 @@ body {
         font-weight: 700;
         line-height: 1.19;
         color: $headingColor;
+
+        &--small {
+            font-weight: 600;
+            font-size: 1.8rem;
+            line-height: 1.11;
+        }
     }
 
     &__title {
